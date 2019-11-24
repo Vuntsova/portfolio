@@ -1,12 +1,13 @@
-@include mediaSm {
-    
-    main{
-        #home{
-            margin-top:10vh ;
-        }
-    } 
-    
+// Widescreens
+@include mediaXl {
+     
 }
+
+// Desktops & Laptops
+@include mediaLg {
+     
+}
+
 //Tablets and small laptops
 @include mediaMd {
     main{
@@ -53,12 +54,22 @@
         }
     }
 }
-//Desktops and laptops
-@include mediaLg {
-     
-}
-@include mediaXl {
-     
-}
+// Smartphones
 
+@include mediaSm {
+    main {
+        padding: 2rem !important;
+    
+        .lg-heading{
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
 
+        .sm-heading {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+      
+  }
