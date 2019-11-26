@@ -1,9 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
+// import React from 'react';
+// import Heaader from './components/Header'
 // import './App.css';
 
 function App() {
-  return <div className="App"></div>;
+  return(
+    <Heaader></Heaader>
+  );
 }
 
 export default App;

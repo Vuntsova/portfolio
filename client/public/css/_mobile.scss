@@ -1,19 +1,15 @@
 // Widescreens
-@include mediaXl {
-     
-}
+@include mediaXl {}
 
 // Desktops & Laptops
-@include mediaLg {
-     
-}
+@include mediaLg {}
 
 //Tablets and small laptops
 @include mediaMd {
-    main{
+    main {
         text-align: center;
         align-items: center;
-        .lg-heading{
+        .lg-heading {
             font-size: 4rem;
             line-height: 1;
             margin-bottom: 1rem;
@@ -23,53 +19,48 @@
             margin-bottom: 1rem;
         }
     }
-
     ul.menu-nav,
-    div.menu-branding{
+    div.menu-branding {
         float: none;
         width: 100%;
         min-height: 0;
-
-        &.show{
-            transform: translate3d(0,0,0);
+        &.show {
+            transform: translate3d(0, 0, 0);
         }
     }
-
-    .menu-nav{
+    .menu-nav {
         height: 75vh;
-
-        transform: translate3d(-100%,0,0);
-
+        transform: translate3d(-100%, 0, 0);
         font-size: 24px;
     }
-
-    .menu-branding{
+    .menu-branding {
         height: 25vh;
-        transform: translate3d(100%,0,0);
-
-        .portrait{
+        transform: translate3d(100%, 0, 0);
+        .portrait {
             background: url('../img/portrait_small.jpg');
             width: 150px;
             height: 150px;
         }
     }
+    .about-info {
+        grid-template-areas: 'bioimage' 'bio' 'bio' 'job1' 'job2' 'job3';
+        grid-template-columns: 1fr;
+    }
 }
-// Smartphones
 
+// Smartphones
 @include mediaSm {
     main {
         padding: 2rem !important;
-    
-        .lg-heading{
+        // height: 100%;
+        .lg-heading {
             font-size: 3.5rem;
             line-height: 1.2;
             margin-bottom: 1rem;
         }
-
         .sm-heading {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
         }
     }
-      
-  }
+}

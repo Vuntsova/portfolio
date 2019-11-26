@@ -12,7 +12,7 @@
         width: 28px;
         height: 3px;
         margin-bottom: 5px;
-        background: #ffffff;
+        background: set-text-color($primary-color);
         @include easeOut;
     }
     // Rotte intp X with Menu Lines 
@@ -112,7 +112,7 @@
         padding: 1rem 0;
 
         font-weight: 300;
-        color: #fff;
+        color: set-text-color($primary-color);
         text-decoration: none;
         @include easeOut;
 
