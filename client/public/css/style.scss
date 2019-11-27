@@ -45,8 +45,13 @@ main {
             margin-top: 20vh;
         }
     }
-    &#about {
+    &#about,
+    &#contact,
+    &#work {
         overflow: hidden;
+        h1 {
+            margin-top: 5vh;
+        }
     }
 }
 
@@ -112,6 +117,41 @@ main {
     }
 }
 
+#contact-form {
+    width: 50vw;
+    margin-top: 15vh;
+    display: grid;
+    grid-template-areas: 'name' 'email' 'message' 'button';
+    grid-template-columns: 1fr;
+    .form-group {
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 0.5rem;
+            &:focus {
+                outline: 3px solid $secondary-color;
+            }
+        }
+        input#name {
+            grid-area: name;
+        }
+        input#email {
+            grid-area: email;
+        }
+        textarea#message {
+            grid-area: message;
+        }
+        button {
+            grid-area: button;
+            background: lightgrey;
+            padding: 0.7em;
+            border: 0;
+            margin: 2rem 0;
+        }
+    }
+}
+
 #main-footer {
     margin: 0;
     text-align: center;
@@ -119,6 +159,9 @@ main {
     background: darken($color: $primary-color, $amount: 10);
     color: set-text-color($primary-color);
     height: 40px;
+    .fa-heart {
+        animation: heartbeat 1s infinite;
+    }
 }
 
 @import 'mobile';

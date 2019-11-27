@@ -1,11 +1,11 @@
-// import React from 'react';
-// import Heaader from './components/Header'
-// import './App.css';
+import React, { Fragment } from 'react'
+import Header from './components/Header'
 
-function App() {
-  return(
-    <Heaader></Heaader>
-  );
+ function App() {
+     return (
+         <Fragment>
+             <Header></Header>
+        </Fragment>
+    )
 }
-
 export default App;

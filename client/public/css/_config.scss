@@ -18,10 +18,32 @@ $background-opacity: 0.9;
     transition: all 0.5s ease-in;
 }
 
+@keyframes heartbeat {
+    0% {
+        transform: scale( .75);
+    }
+    20% {
+        transform: scale( 1);
+    }
+    40% {
+        transform: scale( .75);
+    }
+    60% {
+        transform: scale( 1);
+    }
+    80% {
+        transform: scale( .75);
+    }
+    100% {
+        transform: scale( .75);
+    }
+}
+
 @mixin background {
     @if $show-home-image {
         &#bg-img {
             background: $home-image;
+            max-height: 100vh;
             background-attachment: fixed;
             background-size: cover;
             &:after {
@@ -30,7 +52,7 @@ $background-opacity: 0.9;
                 z-index: -1;
                 top: 0;
                 right: 0;
-                height: 100%;
+                height: 100vh;
                 width: 100%;
                 background: rgba($primary-color, $background-opacity);
             }
