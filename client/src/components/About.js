@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Footer from './Footer';
 
 function About() {
     const divStyle = {
@@ -92,6 +93,7 @@ function About() {
           </div>
         </div>
       </main>
+      <Footer></Footer>
     </Fragment>
   );
 }

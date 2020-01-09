@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import Social from './Social'
+import Social from './Social';
+import Footer from './Footer';
 
 function Contact() {
   const divStyle = {
@@ -46,6 +47,7 @@ function Contact() {
           </a>
         </form>
       </main>
+      <Footer></Footer>
     </Fragment>
   );
 }

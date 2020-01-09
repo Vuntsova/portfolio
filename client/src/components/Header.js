@@ -1,12 +1,16 @@
 import React, { Fragment, Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isMenuBtnClicked: false,
-      isMenuItemClicked: false
+      isMenuItemClicked: false,
+      isHome: false,
+      isAbout: false,
+      isWork: false,
+      isContact:false
     };
   }
 
@@ -21,7 +25,7 @@ class Header extends Component {
     e.preventDefault();
     this.setState({
       isMenuItemClicked: !this.state.isMenuItemClicked,
-      isMenuBtnClicked: !this.state.isMenuBtnClicked
+      isMenuBtnClicked: !this.state.isMenuBtnClicked,
     });
   }
 
@@ -47,33 +51,53 @@ class Header extends Component {
               className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
               onClick={e => this.handleMenuItemToggle(e)}
             >
-              <Link to="/" className="nav-link">
+              <NavLink
+                exact
+                to="/"
+                className="nav-link"
+                activeClassName="current"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li
               className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
               onClick={e => this.handleMenuItemToggle(e)}
             >
-              <Link to="about" className="nav-link">
+              <NavLink
+                exact
+                to="/about"
+                className="nav-link"
+                activeClassName="current"
+              >
                 About Me
-              </Link>
+              </NavLink>
             </li>
             <li
               className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
               onClick={e => this.handleMenuItemToggle(e)}
             >
-              <Link to="work.html" className="nav-link">
+              <NavLink
+                exact
+                to="/work"
+                className="nav-link"
+                activeClassName="current"
+              >
                 My Work
-              </Link>
+              </NavLink>
             </li>
             <li
               className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
               onClick={e => this.handleMenuItemToggle(e)}
             >
-              <Link to="contact.html" className="nav-link">
+              <NavLink
+                exact
+                to="/contact"
+                className="nav-link"
+                activeClassName="current"
+              >
                 Contact Me
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
+import Work from './components/Work';
 import Contact from './components/Contact';
+
 
  const App  = () => {
      return (
@@ -15,9 +17,9 @@ import Contact from './components/Contact';
            <Route exact path="/" component={Home} />
            <Switch>
              <Route exact path="/about" component={About} />
+             <Route exact path="/work" component={Work} />
              <Route exact path="/contact" component={Contact} />
            </Switch>
-           <Route exact path="/about" component={About} />
          </Fragment>
        </Router>
      );
