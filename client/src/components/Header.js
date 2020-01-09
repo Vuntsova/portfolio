@@ -33,74 +33,76 @@ class Header extends Component {
     const { isMenuBtnClicked } = this.state;
     return (
       <Fragment>
-        <div
-          className={`menu-btn ${isMenuBtnClicked ? 'close' : ''}`}
-          onClick={e => this.handleMenuBtnToggle(e)}
-        >
-          <div className="btn-line"></div>
-          <div className="btn-line"></div>
-          <div className="btn-line"></div>
-        </div>
-
-        <nav className={`menu ${isMenuBtnClicked ? 'show' : ''}`}>
-          <div className={`menu-branding ${isMenuBtnClicked ? 'show' : ''}`}>
-            <div className="portrait"></div>
+        <header>
+          <div
+            className={`menu-btn ${isMenuBtnClicked ? 'close' : ''}`}
+            onClick={e => this.handleMenuBtnToggle(e)}
+          >
+            <div className="btn-line"></div>
+            <div className="btn-line"></div>
+            <div className="btn-line"></div>
           </div>
-          <ul className={`menu-nav ${isMenuBtnClicked ? 'show' : ''}`}>
-            <li
-              className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
-              onClick={e => this.handleMenuItemToggle(e)}
-            >
-              <NavLink
-                exact
-                to="/"
-                className="nav-link"
-                activeClassName="current"
+
+          <nav className={`menu ${isMenuBtnClicked ? 'show' : ''}`}>
+            <div className={`menu-branding ${isMenuBtnClicked ? 'show' : ''}`}>
+              <div className="portrait"></div>
+            </div>
+            <ul className={`menu-nav ${isMenuBtnClicked ? 'show' : ''}`}>
+              <li
+                className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
+                onClick={e => this.handleMenuItemToggle(e)}
               >
-                Home
-              </NavLink>
-            </li>
-            <li
-              className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
-              onClick={e => this.handleMenuItemToggle(e)}
-            >
-              <NavLink
-                exact
-                to="/about"
-                className="nav-link"
-                activeClassName="current"
+                <NavLink
+                  exact
+                  to="/"
+                  className="nav-link"
+                  activeClassName="current"
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li
+                className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
+                onClick={e => this.handleMenuItemToggle(e)}
               >
-                About Me
-              </NavLink>
-            </li>
-            <li
-              className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
-              onClick={e => this.handleMenuItemToggle(e)}
-            >
-              <NavLink
-                exact
-                to="/work"
-                className="nav-link"
-                activeClassName="current"
+                <NavLink
+                  exact
+                  to="/about"
+                  className="nav-link"
+                  activeClassName="current"
+                >
+                  About Me
+                </NavLink>
+              </li>
+              <li
+                className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
+                onClick={e => this.handleMenuItemToggle(e)}
               >
-                My Work
-              </NavLink>
-            </li>
-            <li
-              className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
-              onClick={e => this.handleMenuItemToggle(e)}
-            >
-              <NavLink
-                exact
-                to="/contact"
-                className="nav-link"
-                activeClassName="current"
+                <NavLink
+                  exact
+                  to="/work"
+                  className="nav-link"
+                  activeClassName="current"
+                >
+                  My Work
+                </NavLink>
+              </li>
+              <li
+                className={`nav-item ${isMenuBtnClicked ? 'show' : ''}`}
+                onClick={e => this.handleMenuItemToggle(e)}
               >
-                Contact Me
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+                <NavLink
+                  exact
+                  to="/contact"
+                  className="nav-link"
+                  activeClassName="current"
+                >
+                  Contact Me
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+        </header>
       </Fragment>
     );
   }

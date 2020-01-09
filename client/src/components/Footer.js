@@ -6,7 +6,7 @@ export default function Footer() {
       <footer id="main-footer">
         <small>
           Created with Express, React & {' '}
-          <i class="fa fa-heart text-secondary"></i>. Copyright &copy 2019
+          <i class="fa fa-heart text-secondary"></i>. Copyright 2020
         </small>
       </footer>
     </Fragment>
