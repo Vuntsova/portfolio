@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Social from './Social';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import Footer from './Footer';
 
  export default function Home() {

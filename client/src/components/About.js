@@ -13,6 +13,7 @@ function About() {
           <span className="text-secondary">Me</span>
         </h1>
         <div className="about-info">
+          {/* eslint-disable-next-line */}
           <img
             src="./img/portrait.jpg"
             className="bio-image"
@@ -34,7 +35,6 @@ function About() {
               .
             </p>
           </div>
-
           <div className="job job1">
             <h3>Advantage Software</h3>
             <h6>Court Reporting Software</h6>

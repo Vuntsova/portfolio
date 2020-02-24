@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 
 function Social() {
-  const divStyle = {
-    position: 'relative'
-  };
+  // const divStyle = {
+  //   position: 'relative'
+  // };
   return (
     <Fragment>
       <div className="icons">

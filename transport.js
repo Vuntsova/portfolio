@@ -1,46 +1,38 @@
-var nodemailer = require('nodemailer');
-const creds = require('../config/config');
+const express = require('express');
+const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
+const path = require('path');
+const nodemailer = require('nodemailer');
 
-var transport = {
-  host: 'smtp.gmail.com',
-  auth: {
-    user: creds.USER,
-    pass: creds.PASS
-  }
-};
-
-var transporter = nodemailer.createTransport(transport);
-
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Server is ready to take messages');
-  }
-});
-
-router.post('/send', (req, res, next) => {
-  var name = req.body.name;
-  var email = req.body.email;
-  var message = req.body.message;
-  var content = `name: ${name} \n email: ${email} \n message: ${content} `;
-
-  var mail = {
-    from: name,
-    to: 'RECEIVING_EMAIL_ADDRESS_GOES_HERE', //Change to email address that you want to receive messages on
-    subject: 'New Message from Contact Form',
-    text: content
-  };
-
-  transporter.sendMail(mail, (err, data) => {
-    if (err) {
-      res.json({
-        msg: 'fail'
-      });
-    } else {
-      res.json({
-        msg: 'success'
-      });
+// create reusable transporter object using the default SMTP transport
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    auth: {
+      user: 'alda3@ethereal.email',
+      pass: 'e41sbHHGqe3b9aMH8P'
+    },
+    tls: {
+      rejectUnauthorized: false
     }
   });
-});
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: '"Nodemailer Contact" <daniela.hirthe@ethereal.email>', // sender address
+    to: 'alda3@ethereal.email', // list of receivers
+    subject: 'Node Contact Request', // Subject line
+    text: 'Hello world?', // plain text body
+    html: output // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+    res.render('contact', { msg: 'Email has been sent', layout: false });
+  });
