@@ -58,7 +58,7 @@ app.post('/send', (req, res) => {
     from: '"Nodemailer Contact" <daniela.hirthe@ethereal.email>', // sender address
     to: 'vuntsova@aol.com', // list of receivers
     subject: 'Node Contact Request', // Subject line
-    text: 'Hello world?', // plain text body
+    text: '', // plain text body
     html: output // html body
   };
 
